@@ -18,7 +18,7 @@ RM.App = (function() {
     _this.IsMale;
     _this.Outfits = [];
     _this.current = -1;
-    _this.baseImageUrl = './images/';
+    _this.baseImageUrl = 'http://images.surge.sh/';
     _this.styles = ['emo', 'hippie', 'partier'];
     
    
