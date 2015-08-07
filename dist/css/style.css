@@ -1,0 +1,38 @@
+.text-question {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    font-size: 5em;
+    line-height: 1.2;
+}
+
+.text-action {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 100%;
+    max-width: 600px;
+    font-size: 2.5em;
+    line-height: 1.2;
+}
+
+.btn-gender {
+    margin: 10px auto;
+    float: none;
+    display: block;
+    width:90%;
+    max-width: 300px;
+    font-size:2em;
+}
+
+.carousel-container {
+    width:100%;
+    margin:20px auto;
+    max-width:600px;
+}
+
+.center {
+    margin: 0 auto;
+    display:block;
+}
