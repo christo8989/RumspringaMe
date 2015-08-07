@@ -1,3 +1,21 @@
+body {
+    color:#777777;
+}
+
+.color-boy,
+.color-boy:hover,
+.color-boy:active,
+.color-boy:focus {
+    color:#1C5F87;
+}
+
+.color-girl,
+.color-girl:hover,
+.color-girl:active,
+.color-girl:focus {
+    color:#AE4167;
+}
+
 .text-question {
     display: block;
     margin: 10px auto 30px auto;
@@ -23,6 +41,7 @@
     width:90%;
     max-width: 300px;
     font-size:2em;
+    font-weight:300;
 }
 
 .carousel-container {
@@ -44,4 +63,10 @@
 
 .fit-container {
     width:100%;
+}
+
+#About {
+    width:100%;
+    max-width:600px;
+    margin:0 auto;
 }

@@ -15,6 +15,11 @@ RM.App = (function() {
     var buttonShoes = $('a[href="#Shoes"]');
     var buttonFinal = $('a[href="#Final"]');
     
+    _this.Home = $('#Home');
+    _this.About = $('#About');
+    var buttonHome = $('a[href="#"]');
+    var buttonAbout = $('a[href="#About"]');
+    
     _this.IsMale;
     _this.Outfits = [];
     _this.current = -1;
@@ -23,18 +28,38 @@ RM.App = (function() {
     
    
     var init = function() {
-       Hide(_this.Top);
-       Hide(_this.Bottom);
-       Hide(_this.Shoes);
-       Hide(_this.Final);
+        menuInit();
         
-       SetupGenderButton(buttonGender, _this.Gender);
-       SetupTopButton(buttonTop, _this.Top);
-       SetupBottomButton(buttonBottom, _this.Bottom);
-       SetupShoesButton(buttonShoes, _this.Shoes);
-       SetupFinalButton(buttonFinal, _this.Final);
-       
-       Show(_this.Gender);
+        Hide(_this.Top);
+        Hide(_this.Bottom);
+        Hide(_this.Shoes);
+        Hide(_this.Final);
+        
+        SetupGenderButton(buttonGender, _this.Gender);
+        SetupTopButton(buttonTop, _this.Top);
+        SetupBottomButton(buttonBottom, _this.Bottom);
+        SetupShoesButton(buttonShoes, _this.Shoes);
+        SetupFinalButton(buttonFinal, _this.Final);
+        
+        Show(_this.Gender);
+    };
+    
+    var menuInit = function() {
+        buttonHome.click(function(e) {
+            e.preventDefault();
+            
+            ShowContainerMenu(_this.Home);
+            buttonHome.parent().addClass('active');
+            buttonAbout.parent().removeClass('active');
+        }); 
+        
+        buttonAbout.click(function(e) {
+            e.preventDefault();
+            
+            ShowContainerMenu(_this.About);
+            buttonAbout.parent().addClass('active');
+            buttonHome.parent().removeClass('active');
+        });
     };
     
     var SetupTopButton = function(button, container) {
@@ -104,6 +129,16 @@ RM.App = (function() {
        Hide(_this.Bottom);
        Hide(_this.Shoes);
        Hide(_this.Final);
+    };
+    
+    var ShowContainerMenu = function(container) {
+        HideAllMenu();
+        Show(container);
+    };
+    
+    var HideAllMenu = function() {
+       Hide(_this.Home);
+       Hide(_this.About);
     };
     
     var Show = function(element) {
