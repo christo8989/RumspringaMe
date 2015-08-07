@@ -14,7 +14,6 @@
     width: 100%;
     max-width: 600px;
     font-size: 2.5em;
-    line-height: 1.2;
 }
 
 .btn-gender {
@@ -29,10 +28,20 @@
 .carousel-container {
     width:100%;
     margin:20px auto;
-    max-width:600px;
+    max-width:500px;
 }
 
 .center {
     margin: 0 auto;
     display:block;
+}
+
+.outfit-container {
+    width:60%;
+    max-width:300px;
+    margin: 0 auto;
+}
+
+.fit-container {
+    width:100%;
 }

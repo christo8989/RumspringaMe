@@ -16,7 +16,7 @@
         <link href="./css/style.css" rel="stylesheet">
         
         <!-- Custom styles for this template -->
-        <link href="navbar-static-top.css" rel="stylesheet">
+        <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
         
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -65,12 +65,12 @@
         <div class="jumbotron">
             <div id="Gender" class="fade in active">
                 <div class="text-question">Are you a boy or girl?</div>
-                <a class="btn btn-default btn-large btn-gender" href="#Top" data-gender="boy" role="button">Boy</a>
-                <a class="btn btn-default btn-large btn-gender" href="#Top" data-gender="girl" role="button">Girl</a>
+                <a class="btn btn-default btn-large btn-gender" href="#Top" data-is-boy="true" role="button">Boy</a>
+                <a class="btn btn-default btn-large btn-gender" href="#Top" data-is-boy="false" role="button">Girl</a>
             </div> <!-- /Gender -->
             
             <div id="Top" class="hide fade">
-                <div class="text-action">view 1 of 3 - Choose a top:</div>
+                <div class="text-action">1 of 3 - Choose a top:</div>
                 <div class="carousel-container">
                     <div id="carousel-top" class="carousel slide" data-ride="carousel" data-interval="false">
                         <!-- Indicators -->
@@ -83,16 +83,16 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="http://lorempixel.com/200/400/fashion/1" class="center" alt="One">
-                                <div class="carousel-caption">One</div>
+                                <img src="./images/girl/girl-top-emo.JPG" class="center" alt="Top One">
+                                <div class="carousel-caption"></div>
                             </div>
                             <div class="item">
-                                <img src="http://lorempixel.com/400/400/fashion/2" class="center" alt="Two">
-                                <div class="carousel-caption">Two</div>
+                                <img src="./images/girl/girl-top-hippie.JPG" class="center" alt="Top Two">
+                                <div class="carousel-caption"></div>
                             </div>
                             <div class="item">
-                                <img src="http://lorempixel.com/400/400/fashion/3" class="center" alt="Three">
-                                <div class="carousel-caption">Three</div>
+                                <img src="./images/girl/girl-top-partier.JPG" class="center" alt="Top Three">
+                                <div class="carousel-caption"></div>
                             </div>
                         </div>
                     
@@ -111,7 +111,7 @@
             </div> <!-- /Top -->
             
             <div id="Bottom" class="hide fade">
-                <div class="text-action">view 2 of 3 - Choose a bottom:</div>
+                <div class="text-action">2 of 3 - Choose a bottom:</div>
                 <div class="carousel-container">
                     <div id="carousel-bottom" class="carousel slide" data-ride="carousel" data-interval="false">
                         <!-- Indicators -->
@@ -124,16 +124,16 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="http://lorempixel.com/200/400/fashion/1" class="center" alt="One">
-                                <div class="carousel-caption">One</div>
+                                <img src="./images/girl/girl-bottom-emo.JPG" class="center" alt="Bottom One">
+                                <div class="carousel-caption"></div>
                             </div>
                             <div class="item">
-                                <img src="http://lorempixel.com/400/400/fashion/2" class="center" alt="Two">
-                                <div class="carousel-caption">Two</div>
+                                <img src="./images/girl/girl-bottom-hippie.JPG" class="center" alt="Bottom Two">
+                                <div class="carousel-caption"></div>
                             </div>
                             <div class="item">
-                                <img src="http://lorempixel.com/400/400/fashion/3" class="center" alt="Three">
-                                <div class="carousel-caption">Three</div>
+                                <img src="./images/girl/girl-bottom-partier.JPG" class="center" alt="Bottom Three">
+                                <div class="carousel-caption"></div>
                             </div>
                         </div>
                     
@@ -152,7 +152,7 @@
             </div> <!-- /Bottom -->
             
             <div id="Shoes" class="hide fade">
-                <div class="text-action">view 3 of 3 - Choose two shoes:</div>
+                <div class="text-action">3 of 3 - Choose a shoe:</div>
                 <div class="carousel-container">
                     <div id="carousel-shoes" class="carousel slide" data-ride="carousel" data-interval="false">
                         <!-- Indicators -->
@@ -165,16 +165,16 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="http://lorempixel.com/200/400/fashion/1" class="center" alt="One">
-                                <div class="carousel-caption">One</div>
+                                <img src="./images/girl/girl-shoes-emo.JPG" class="center" alt="Shoes One">
+                                <div class="carousel-caption"></div>
                             </div>
                             <div class="item">
-                                <img src="http://lorempixel.com/400/400/fashion/2" class="center" alt="Two">
-                                <div class="carousel-caption">Two</div>
+                                <img src="./images/girl/girl-shoes-hippie.JPG" class="center" alt="Shoes Two">
+                                <div class="carousel-caption"></div>
                             </div>
                             <div class="item">
-                                <img src="http://lorempixel.com/400/400/fashion/3" class="center" alt="Three">
-                                <div class="carousel-caption">Three</div>
+                                <img src="./images/girl/girl-shoes-partier.JPG" class="center" alt="Shoes Three">
+                                <div class="carousel-caption"></div>
                             </div>
                         </div>
                     
@@ -194,7 +194,11 @@
             
             <div id="Final" class="hide fade">
                 <div class="text-action">You've been Rumspringa'd!</div>
-                <p>A picture of all the items here.</p>
+                <div class="outfit-container">
+                    <img src="" id="outfit-top" class="fit-container" />
+                    <img src="" id="outfit-bottom" class="fit-container" />
+                    <img src="" id="outfit-shoes" class="fit-container" />
+                </div>
                 <a class="btn btn-primary btn-large btn-gender" href="#Top" role="button">Try Again!</a>
             </div> <!-- /Final -->
         </div>
@@ -207,6 +211,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/outfit.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
