@@ -15,10 +15,12 @@ RM.App = (function() {
     var buttonShoes = $('a[href="#Shoes"]');
     var buttonFinal = $('a[href="#Final"]');
     
-    var IsMale;
-    var Outfits = [];
-    var current = -1;
-     
+    _this.IsMale;
+    _this.Outfits = [];
+    _this.current = -1;
+    _this.baseImageUrl = './images/';
+    _this.styles = ['emo', 'hippie', 'partier'];
+    
    
     var init = function() {
        Hide(_this.Top);
@@ -35,62 +37,65 @@ RM.App = (function() {
        Show(_this.Gender);
     };
     
-    var SetupTopButton = function(button, showMe) {
+    var SetupTopButton = function(button, container) {
         button.click(function(e) {
             e.preventDefault();
             
-            IsMale = $(this).data('is-boy') || IsMale;
-            ShowContainer(showMe);
+            _this.IsMale = $(this).data('is-boy') || _this.IsMale;
+            BuildImageSrc(container, 'top');
+            ShowContainer(container);
         });
     };
     
-    var SetupBottomButton = function(button, showMe) {
+    var SetupBottomButton = function(button, container) {
         button.click(function(e) {
             e.preventDefault();
             
-            Outfits.push(new RM.Outfit());
-            current++;
+            _this.Outfits.push(new RM.Outfit());
+            _this.current++;
             
-            SetupOutfit(Outfits[current].Top, button);
-            ShowContainer(showMe);
+            SetupOutfit(_this.Outfits[_this.current].Top, button);
+            BuildImageSrc(container, 'bottom');
+            ShowContainer(container);
         });
     };
     
-    var SetupShoesButton = function(button, showMe) {
+    var SetupShoesButton = function(button, container) {
         button.click(function(e) {
             e.preventDefault();
             
-            SetupOutfit(Outfits[current].Bottom, button);
-            ShowContainer(showMe);
+            SetupOutfit(_this.Outfits[_this.current].Bottom, button);
+            BuildImageSrc(container, 'shoes');
+            ShowContainer(container);
         });
     };
     
-    var SetupFinalButton = function(button, showMe) {
+    var SetupFinalButton = function(button, container) {
         button.click(function(e) {
             e.preventDefault();
             
-            SetupOutfit(Outfits[current].Shoes, button);
-            Outfits[current].BuildOutfit();
-            ShowContainer(showMe);
+            SetupOutfit(_this.Outfits[_this.current].Shoes, button);
+            _this.Outfits[_this.current].BuildOutfit();
+            ShowContainer(container);
         });
     };
     
-    var SetupGenderButton = function(button, showMe) {
+    var SetupGenderButton = function(button, container) {
         button.click(function(e) {
             e.preventDefault();
             
-            ShowContainer(showMe);
+            ShowContainer(container);
         });
     };
     
     var SetupOutfit = function(outfit, button) {
-        var image = button.parent().find('.item.active img');;
+        var image = button.parent().find('.item.active img');
         outfit.Value = image.prop('src');
     };
     
-    var ShowContainer = function(showMe) {
+    var ShowContainer = function(container) {
         HideAll();
-        Show(showMe);
+        Show(container);
     };
     
     var HideAll = function() {
@@ -110,6 +115,15 @@ RM.App = (function() {
     var Hide = function(element) {
         element.hide();
         element.removeClass('in active');
+    };
+    
+    var BuildImageSrc = function(container, clothing) {
+        var baseUrl = _this.baseImageUrl + (_this.IsMale ? 'boy/boy-' : 'girl/girl-') + clothing + '-';
+        var elements = container.find('.carousel-inner .item img');
+        for (var i = 0; i < _this.styles.length; ++i)
+        {
+            $(elements[i]).attr('src', baseUrl + _this.styles[i] + '.JPG');
+        }
     };
     
     return {
